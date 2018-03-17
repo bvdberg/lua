@@ -1,5 +1,5 @@
 /*
-** $Id: luaconf.h,v 1.258 2016/12/20 18:37:00 roberto Exp roberto $
+** $Id: luaconf.h,v 1.259 2016/12/22 13:08:50 roberto Exp $
 ** Configuration file for Lua
 ** See Copyright Notice in lua.h
 */
@@ -61,7 +61,7 @@
 #if defined(LUA_USE_LINUX)
 #define LUA_USE_POSIX
 #define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
-#define LUA_USE_READLINE	/* needs some extra libraries */
+//#define LUA_USE_READLINE	/* needs some extra libraries */
 #endif
 
 
