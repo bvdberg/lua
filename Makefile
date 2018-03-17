@@ -6,13 +6,13 @@
 # Your platform. See PLATS for possible values.
 PLAT= none
 
-CC= arm-linux-gnueabi-gcc -std=gnu99 -march=armv7-a -marm
-CFLAGS= -O2 -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)
+CC = $(TARGET_PREFIX)gcc -std=gnu99 -march=armv7-a -marm -mfpu=neon -mfloat-abi=hard -mcpu=cortex-a9 --sysroot=/home/bas/peta/sysroots/cortexa9hf-neon-xilinx-linux-gnueabi
+CFLAGS= -O2 -pipe -g -feliminate-unused-debug-types -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)
 LDFLAGS= $(SYSLDFLAGS) $(MYLDFLAGS)
 LIBS= -lm $(SYSLIBS) $(MYLIBS)
 
-AR= arm-linux-gnueabi-ar rcu
-RANLIB= arm-linux-gnueabi-ranlib
+AR= $(TARGET_PREFIX)ar rcu
+RANLIB= $(TARGET_PREFIX)ranlib
 RM= rm -f
 
 SYSCFLAGS=
